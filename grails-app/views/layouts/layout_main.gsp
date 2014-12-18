@@ -17,10 +17,21 @@
     <link rel="apple-touch-icon" sizes="114x114" href="${assetPath(src: 'apple-touch-icon-retina.png')}">
     <asset:stylesheet src="application.css"/>
     <asset:javascript src="application.js"/>
+    <g:render template="/shared/css" />
     <g:layoutHead/>
 </head>
 
 <body>
-<h1>Hello word</h1>
+<g:render template="/shared/panel" />
+
+<g:render template="/shared/topNav" />
+
+<g:render template="/shared/sidebarLeft" />
+
+<g:render template="/shared/sidebarRightHeading" />
+
+<g:render template="/shared/sidebarRight" />
+
+<g:render template="/shared/js" />
 </body>
 </html>

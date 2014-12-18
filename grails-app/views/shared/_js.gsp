@@ -37,9 +37,6 @@
 <g:javascript src="plugins/easypie-chart/jquery.easypiechart.min.js"/>
 
 <!-- KNOB JS -->
-<!--[if IE]>
-<g:javascript type="text/javascript" src="plugins/jquery-knob/excanvas.js"/>
-<![endif]-->
 <g:javascript src="plugins/jquery-knob/jquery.knob.js"/>
 <g:javascript src="plugins/jquery-knob/knob.js"/>
 

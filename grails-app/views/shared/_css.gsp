@@ -4,7 +4,7 @@
 <!-- css/shopCSS/plugins CSS -->
 <link href="${resource(dir: 'css/shopCSS/plugins/weather-icon/css/', file: 'weather-icons.min.css')}" rel="stylesheet" type="text/css">
 <link href="${resource(dir: 'css/shopCSS/plugins/prettify', file: 'prettify.min.css')}" rel="stylesheet" type="text/css">
-<link href="${resource(dir: 'css/shopCSS/plugins/prettify', file: 'magnific-popup.min.css')}" rel="stylesheet" type="text/css">
+<link href="${resource(dir: 'css/shopCSS/plugins/magnific-popup', file: 'magnific-popup.min.css')}" rel="stylesheet" type="text/css">
 <link href="${resource(dir: 'css/shopCSS/plugins/owl-carousel', file: 'owl.carousel.min.css')}" rel="stylesheet" type="text/css">
 <link href="${resource(dir: 'css/shopCSS/plugins/owl-carousel', file: 'owl.theme.min.css')}" rel="stylesheet" type="text/css">
 <link href="${resource(dir: 'css/shopCSS/plugins/owl-carousel', file: 'owl.transitions.min.css')}" rel="stylesheet" type="text/css">
@@ -19,8 +19,8 @@
 <link href="${resource(dir: 'css/shopCSS/plugins/morris-chart', file: 'morris.min.css')}" rel="stylesheet" type="text/css">
 <link href="${resource(dir: 'css/shopCSS/plugins/c3-chart', file: 'c3.min.css')}" rel="stylesheet" type="text/css">
 <link href="${resource(dir: 'css/shopCSS/plugins/slider', file: 'slider.min.css')}" rel="stylesheet" type="text/css">
-<link href="${resource(dir: 'css/shopCSS/plugins/salvattore', file: 'salvattore.min.css')}" rel="stylesheet" type="text/css">
-<link href="${resource(dir: 'css/shopCSS/plugins/toastr', file: 'toastr.min.css')}" rel="stylesheet" type="text/css">
+<link href="${resource(dir: 'css/shopCSS/plugins/salvattore', file: 'salvattore.css')}" rel="stylesheet" type="text/css">
+<link href="${resource(dir: 'css/shopCSS/plugins/toastr', file: 'toastr.css')}" rel="stylesheet" type="text/css">
 <link href="${resource(dir: 'css/shopCSS/plugins/fullcalendar/fullcalendar', file: 'fullcalendar.css')}" rel="stylesheet" type="text/css">
 <link href="${resource(dir: 'css/shopCSS/plugins/fullcalendar/fullcalendar', file: 'fullcalendar.print.css')}" rel="stylesheet" type="text/css">
 
