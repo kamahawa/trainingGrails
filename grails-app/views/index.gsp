@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="layout_main"/>
-		<title>Welcome to train Grails - pchuan group</title>
-
+        <meta name="layout" content="layout_main"/>
+        <title>Welcome to train Grails - pchuan group</title>
 	</head>
 	<body>
-
-
-        <h2> abc xyz</h2>
+		<div id="page-body" role="main">
+			<h1>Welcome to Grails</h1>
+		</div>
 	</body>
 </html>

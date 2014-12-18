@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/webshoptraining.iml" filepath="$PROJECT_DIR$/webshoptraining.iml" />
-      <module fileurl="file://$PROJECT_DIR$/webshoptraining-grailsPlugins.iml" filepath="$PROJECT_DIR$/webshoptraining-grailsPlugins.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webshoptrain.iml" filepath="$PROJECT_DIR$/webshoptrain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webshoptrain-grailsPlugins.iml" filepath="$PROJECT_DIR$/webshoptrain-grailsPlugins.iml" />
     </modules>
   </component>
 </project>
