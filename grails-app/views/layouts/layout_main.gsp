@@ -22,16 +22,21 @@
 </head>
 
 <body>
-<g:render template="/shared/panel" />
+    <g:render template="/shared/panel" />
 
-<g:render template="/shared/topNav" />
+    <g:render template="/shared/topNav" />
 
-<g:render template="/shared/sidebarLeft" />
+    <g:render template="/shared/sidebarLeft" />
 
-<g:render template="/shared/sidebarRightHeading" />
+    <g:render template="/shared/sidebarRightHeading" />
 
-<g:render template="/shared/sidebarRight" />
+    <g:render template="/shared/sidebarRight" />
 
-<g:render template="/shared/js" />
+    <div id="content">
+        <g:render template="/shared/breadcrumbs"/>
+        <g:layoutBody/>
+    </div>
+
+    <g:render template="/shared/js" />
 </body>
 </html>

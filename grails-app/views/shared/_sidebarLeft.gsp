@@ -2,7 +2,7 @@
 <div class="sidebar-left sidebar-nicescroller">
 <ul class="sidebar-menu">
 <li>
-    <a href="index-2.html">
+    <a href="home">
         <i class="fa fa-dashboard icon-sidebar"></i>
         ${message(code: 'menu.Home')}
         <span class="label label-success span-sidebar">UPDATED</span>
