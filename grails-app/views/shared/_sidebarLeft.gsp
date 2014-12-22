@@ -9,7 +9,7 @@
     </a>
 </li>
 <li>
-    <a href="front-end.html">
+    <a href="electronic">
         <i class="fa fa-bomb icon-sidebar"></i>
         ${message(code: 'menu.Electronic')}
         <span class="label label-danger span-sidebar">NEW</span>
