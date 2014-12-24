@@ -2,18 +2,22 @@
 <div class="sidebar-left sidebar-nicescroller">
 <ul class="sidebar-menu">
 <li>
-    <a href="home">
+    <a title="${message(code: 'menu.Home')}" href="${g.createLink(controller: "Home")}">
         <i class="fa fa-dashboard icon-sidebar"></i>
         ${message(code: 'menu.Home')}
         <span class="label label-success span-sidebar">UPDATED</span>
     </a>
 </li>
 <li>
-    <a href="electronic">
+    <a title="${message(code: 'menu.Electronic')}" href="${g.createLink(controller: "Electronic")}">
         <i class="fa fa-bomb icon-sidebar"></i>
         ${message(code: 'menu.Electronic')}
         <span class="label label-danger span-sidebar">NEW</span>
     </a>
+    <ul class="submenu">
+        <li><a title="${message(code: 'submenu.Electronic.Television')}" href="${g.createLink(controller: "Electronic", action: "television")}">${message(code: 'submenu.Electronic.Television')}</a></li>
+        <li><a title="${message(code: 'submenu.Electronic.MobilePhone')}" href="${g.createLink(controller: "Electronic", action: "mobilePhone")}">${message(code: 'submenu.Electronic.MobilePhone')}</a></li>
+    </ul>
 </li>
 <li>
     <a href="#fakelink">

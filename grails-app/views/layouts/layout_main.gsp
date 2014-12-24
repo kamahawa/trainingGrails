@@ -32,7 +32,7 @@
 
     <g:render template="/shared/sidebarRight" />
 
-    <div id="content">
+    <div id="page-content" class="page-content">
         <g:render template="/shared/breadcrumbs"/>
         <g:layoutBody/>
     </div>
