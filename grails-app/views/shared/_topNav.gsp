@@ -4,7 +4,7 @@
 
 <!-- Begin Logo brand -->
 <div class="logo-brand">
-    <a href="index-2.html"><img src="images/img/sentir-logo-primary.png" alt="Sentir logo"></a>
+    <a href="home"><img src="images/img/sentir-logo-primary.png" alt="kama logo"></a>
 </div><!-- /.logo-brand -->
 <!-- End Logo brand -->
 
