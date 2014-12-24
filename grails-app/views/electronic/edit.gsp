@@ -16,42 +16,43 @@
     <div class="row">
         <div class="col-sm-8">
             <div class="the-box">
-                <g:form action="update" class="form-horizontal" method="post" id="editTelevision"
+                <g:form class="form-horizontal" controller="electronic" action="update"
                       data-bv-message="Du lieu khong hop ly. Vui long kiem tra lai."
                       data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
                       data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
                       data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+                    <g:hiddenField name="id" value="${result.id}" />
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Name</label>
                         <div class="col-lg-5">
-                            <g:textField name="txtName" value="${result.name}" data-bv-notempty-message="The last name is required and cannot be empty"/>
+                            <g:textField name="name" value="${result.name}" data-bv-notempty-message="The last name is required and cannot be empty"/>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Description</label>
                         <div class="col-lg-5">
-                            <g:textField name="txtDescription" value="${result.description}"/>
+                            <g:textField name="description" value="${result.description}"/>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Price</label>
                         <div class="col-lg-5">
-                            <g:textField name="txtPrice" value="${result.price}"/>
+                            <g:textField name="price" value="${result.price}"/>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Manufacture</label>
                         <div class="col-lg-5">
-                            <g:textField name="txtManufacture" value="${result.manufacture}"/>
+                            <g:textField name="manufacture" value="${result.manufacture}"/>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-lg-9 col-lg-offset-3">
-                            <g:submitButton name="Update" class="btn btn-primary" value="${message(code:'default.button.update.label')}"/>
+                            <g:actionSubmit name="Update" action="update" class="btn btn-primary" value="${message(code:'default.button.update.label')}"/>
                             <input type="button" value="${message(code: 'default.button.cancel.label')}" class="btn btn-primary"
                                    onclick="window.history.back()"/>
                         </div>

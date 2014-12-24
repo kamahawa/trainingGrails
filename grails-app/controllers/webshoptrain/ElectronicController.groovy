@@ -21,10 +21,7 @@ class ElectronicController {
 
     def update(params){
         def result = webShopService.updateTvByID(params)
-        println("day la result")
-        println(result)
-        println("day la result")
-        render(view: "show", result: result)
+        render(view: "show", model: [result: result])
     }
 
 //    def show(params){

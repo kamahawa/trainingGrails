@@ -17,14 +17,13 @@ class WebShopService {
     def updateTvByID(params){
         def tv = Television.get(params.id)
         try{
-            tv.name = params.txtName
-            tv.description = params.txtDescription
-            tv.price = params.txtPrice
-            tv.manufacture = params.txtManufacture
-            //tv.save(flush: true)
+            tv.name = params.name
+            tv.description = params.description
+            tv.price = params.price
+            tv.manufacture = params.manufacture
+            tv.save(flush: true)
         }catch(Exception e) {
 //            redirect(controller: 'Electronic', action: "television)
-            println("error ne")
         }
         return tv
     }

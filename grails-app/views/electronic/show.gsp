@@ -17,39 +17,40 @@
 <div class="row">
     <div class="col-sm-8">
         <div class="the-box">
-            <g:form class="form-horizontal">
+            <g:form class="form-horizontal" controller="electronic">
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Name</label>
                     <div class="col-lg-5">
-                        <g:textField name="txtName" value="${result.name}" data-bv-notempty-message="The last name is required and cannot be empty"/>
+                        <label class="">${result.name}</label>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Description</label>
                     <div class="col-lg-5">
-                        <g:textField name="txtDescription" value="${result.description}"/>
+                        <label class="">${result.description}</label>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Price</label>
                     <div class="col-lg-5">
-                        <g:textField name="txtPrice" value="${result.price}"/>
+                        <label class="">${result.price}</label>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Manufacture</label>
                     <div class="col-lg-5">
-                        <g:textField name="txtManufacture" value="${result.manufacture}"/>
+                        <label class="">${result.manufacture}</label>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-lg-9 col-lg-offset-3">
-                        <input type="button" value="${message(code: 'default.button.cancel.label')}" class="btn btn-primary"
-                               onclick="window.history.back()"/>
+                        <g:actionSubmit value="${message(code: 'default.button.back.label')}" action="television" />
+                        %{--<input type="button" value="${message(code: 'default.button.cancel.label')}" class="btn btn-primary"--}%
+                               %{--onclick="window.history.back()"/>--}%
                     </div>
                 </div>
             </g:form>
