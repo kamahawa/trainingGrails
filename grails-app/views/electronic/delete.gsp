@@ -8,7 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title></title>
+    <meta name="layout" content="layout_main"/>
+    <title><g:message code="default.deleted.message" args="[entityName]"/></title>
 </head>
 
 <body>
