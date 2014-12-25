@@ -15,8 +15,8 @@
         <span class="label label-danger span-sidebar">NEW</span>
     </a>
     <ul class="submenu">
-        <li><a title="${message(code: 'submenu.Electronic.Television')}" href="${g.createLink(controller: "Electronic", action: "television")}">${message(code: 'submenu.Electronic.Television')}</a></li>
-        <li><a title="${message(code: 'submenu.Electronic.MobilePhone')}" href="${g.createLink(controller: "Electronic", action: "mobilePhone")}">${message(code: 'submenu.Electronic.MobilePhone')}</a></li>
+        <li><a title="${message(code: 'submenu.Electronic.Television')}" href="${g.createLink(controller: "television", action: "index")}">${message(code: 'submenu.Electronic.Television')}</a></li>
+        <li><a title="${message(code: 'submenu.Electronic.MobilePhone')}" href="${g.createLink(controller: "mobilePhone", action: "index")}">${message(code: 'submenu.Electronic.MobilePhone')}</a></li>
     </ul>
 </li>
 <li>
