@@ -6,8 +6,8 @@ import grails.transaction.Transactional
 class WebShopService {
 
     @Transactional(readOnly = true)
-    def getListTvService() {
-        Television.list()
+    def getListTvService(params) {
+        Television.list(params)
     }
 
     def editTVByID(params){
@@ -26,5 +26,13 @@ class WebShopService {
 //            redirect(controller: 'Electronic', action: "television)
         }
         return tv
+    }
+
+    def save(Television televisionInstance){
+        televisionInstance.save flush: true
+    }
+
+    def delete(Television televisionInstance){
+        televisionInstance.delete flush: true
     }
 }

@@ -6,12 +6,12 @@ import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
 class TelevisionController {
-
+    WebShopService webShopService;
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond Television.list(params), model: [televisionInstanceCount: Television.count()]
+        respond webShopService.getListTvService(params), model: [televisionInstanceCount: Television.count()]
     }
 
     def show(Television televisionInstance) {
@@ -34,7 +34,7 @@ class TelevisionController {
             return
         }
 
-        televisionInstance.save flush: true
+        webShopService.save(televisionInstance)
 
         request.withFormat {
             form multipartForm {
@@ -61,7 +61,7 @@ class TelevisionController {
             return
         }
 
-        televisionInstance.save flush: true
+        webShopService.save(televisionInstance)
 
         request.withFormat {
             form multipartForm {
@@ -80,7 +80,7 @@ class TelevisionController {
             return
         }
 
-        televisionInstance.delete flush: true
+        webShopService.delete(televisionInstance)
 
         request.withFormat {
             form multipartForm {
