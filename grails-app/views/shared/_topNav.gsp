@@ -4,7 +4,7 @@
 
 <!-- Begin Logo brand -->
 <div class="logo-brand">
-    <a href="home"><img src="images/img/sentir-logo-primary.png" alt="kama logo"></a>
+   <g:link action="index" controller="television"><g:img dir="images/img" file="sentir-logo-primary.png"/></g:link>
 </div><!-- /.logo-brand -->
 <!-- End Logo brand -->
 
@@ -33,7 +33,7 @@
 <ul class="nav-user navbar-right">
     <li class="dropdown">
         <a href="#fakelink" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="images/img/avatar/avatar-1.jpg" class="avatar img-circle" alt="Avatar">
+            <g:img dir="images/img/avatar" file="avatar-1.jpg" width="40" height="40"/>
             Hi, <strong>Paris Hawker</strong>
         </a>
         <ul class="dropdown-menu square primary margin-list-rounded with-triangle">

@@ -91,6 +91,23 @@ class TelevisionController {
         }
     }
 
+    def ajaxAllShowMobile(Integer max){
+        params.max = Math.min(max ?: 10, 100)
+        def mobilePhoneList = []
+        def mobilePhoneCount = 0
+        if (params?.idMobileText){
+            mobilePhoneList = webShopService.getListMobileIdService(params.idMobileText)
+            mobilePhoneCount = 1
+        }else
+        {
+            mobilePhoneList = webShopService.getListMobileService(params)
+            mobilePhoneCount = MobilePhone.count()
+        }
+        render(view:'_resultMobile',model: [mobilePhoneList: mobilePhoneList,mobilePhoneCount: mobilePhoneCount])
+    }
+
+
+
     protected void notFound() {
         request.withFormat {
             form multipartForm {

@@ -54,5 +54,21 @@
 				<g:paginate total="${televisionInstanceCount ?: 0}" />
 			</div>
 		</div>
+    
+    <div>
+        <g:formRemote name="mobileForm" update="updateHere" url="[controller: 'television',action:'ajaxAllShowMobile']"
+                      on404="alert('not found!')" onSuccess="" before="confirm('Are you want to load?')">
+            <g:textField name="idMobileText" id="idMobileText"/>
+            <g:actionSubmit name="submit" action="ajaxAllShowMobile" class="btn btn-primary" value="${message(code:'default.button.update.label')}"/>
+        </g:formRemote>
+    </div>
+    <div id="updateHere"></div>
+
+    <div>
+        <g:remoteLink name="mobileShow" update="updateRemote" action="ajaxAllShowMobile" controller="television" id="mobileShowId">
+            Update remote link
+        </g:remoteLink>
+    </div>
+    <div id="updateRemote"></div>
 	</body>
 </html>

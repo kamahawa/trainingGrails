@@ -8,4 +8,7 @@ class Television extends Electronic {
 
     static constraints = {
     }
+
+    //many to many : many products to many bills
+    static hasMany = [Bill]
 }

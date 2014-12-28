@@ -10,6 +10,23 @@ class WebShopService {
         Television.list(params)
     }
 
+    @Transactional
+    def getListMobileService(params){
+        MobilePhone.list(params)
+    }
+
+    @Transactional
+    def getListMobileIdService(String idMobile){
+        def model
+        try
+        {
+            model = MobilePhone.get(idMobile)
+        }catch(Exception ex){
+
+        }
+        model
+    }
+
     def editTVByID(params){
         Television.get(params.id)
     }
