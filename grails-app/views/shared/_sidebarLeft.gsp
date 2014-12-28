@@ -17,6 +17,9 @@
     <ul class="submenu">
         <li><a title="${message(code: 'submenu.Electronic.Television')}" href="${g.createLink(controller: "television", action: "index")}">${message(code: 'submenu.Electronic.Television')}</a></li>
         <li><a title="${message(code: 'submenu.Electronic.MobilePhone')}" href="${g.createLink(controller: "mobilePhone", action: "index")}">${message(code: 'submenu.Electronic.MobilePhone')}</a></li>
+        <li><a title="${message(code: 'submenu.Electronic.AccountBank')}" href="${g.createLink(controller: "accountBank", action: "index")}">${message(code: 'submenu.Electronic.AccountBank')}</a></li>
+        <li><a title="${message(code: 'submenu.Electronic.Bill')}" href="${g.createLink(controller: "bill", action: "index")}">${message(code: 'submenu.Electronic.Bill')}</a></li>
+        <li><a title="${message(code: 'submenu.Electronic.Customer')}" href="${g.createLink(controller: "customer", action: "index")}">${message(code: 'submenu.Electronic.Customer')}</a></li>
     </ul>
 </li>
 <li>
