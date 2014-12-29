@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="layout_main">
+		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'customer.label', default: 'Customer')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
@@ -55,26 +55,6 @@
 					<span id="accountBank-label" class="property-label"><g:message code="customer.accountBank.label" default="Account Bank" /></span>
 					
 						<span class="property-value" aria-labelledby="accountBank-label"><g:link controller="accountBank" action="show" id="${customerInstance?.accountBank?.id}">${customerInstance?.accountBank?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${customerInstance?.bill}">
-				<li class="fieldcontain">
-					<span id="bill-label" class="property-label"><g:message code="customer.bill.label" default="Bill" /></span>
-					
-						<span class="property-value" aria-labelledby="bill-label"><g:link controller="bill" action="show" id="${customerInstance?.bill?.id}">${customerInstance?.bill?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${customerInstance?.bills}">
-				<li class="fieldcontain">
-					<span id="bills-label" class="property-label"><g:message code="customer.bills.label" default="Bills" /></span>
-					
-						<g:each in="${customerInstance.bills}" var="b">
-						<span class="property-value" aria-labelledby="bills-label"><g:link controller="bill" action="show" id="${b.id}">${b?.encodeAsHTML()}</g:link></span>
-						</g:each>
 					
 				</li>
 				</g:if>

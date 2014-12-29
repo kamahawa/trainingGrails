@@ -2,30 +2,39 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: billInstance, field: 'idCustomer', 'error')} required">
-	<label for="idCustomer">
-		<g:message code="bill.idCustomer.label" default="Id Customer" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="idCustomer" type="number" value="${billInstance.idCustomer}" required=""/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: billInstance, field: 'idProduct', 'error')} required">
-	<label for="idProduct">
-		<g:message code="bill.idProduct.label" default="Id Product" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="idProduct" type="number" value="${billInstance.idProduct}" required=""/>
-
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: billInstance, field: 'number', 'error')} required">
 	<label for="number">
 		<g:message code="bill.number.label" default="Number" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:field name="number" type="number" value="${billInstance.number}" required=""/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: billInstance, field: 'billTelevision', 'error')} ">
+	<label for="billTelevision">
+		<g:message code="bill.billTelevision.label" default="Bill Television" />
+		
+	</label>
+	
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: billInstance, field: 'customer', 'error')} required">
+	<label for="customer">
+		<g:message code="bill.customer.label" default="Customer" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="customer" name="customer.id" from="${webshoptrain.Customer.list()}" optionKey="id" required="" value="${billInstance?.customer?.id}" class="many-to-one"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: billInstance, field: 'customerBill', 'error')} ">
+	<label for="customerBill">
+		<g:message code="bill.customerBill.label" default="Customer Bill" />
+		
+	</label>
+	<g:select name="customerBill" from="${webshoptrain.Customer.list()}" multiple="multiple" optionKey="id" size="5" value="${billInstance?.customerBill*.id}" class="many-to-many"/>
 
 </div>
 

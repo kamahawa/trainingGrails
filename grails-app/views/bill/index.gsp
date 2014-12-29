@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="layout_main">
+		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'bill.label', default: 'Bill')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
@@ -24,11 +24,9 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="idCustomer" title="${message(code: 'bill.idCustomer.label', default: 'Id Customer')}" />
-					
-						<g:sortableColumn property="idProduct" title="${message(code: 'bill.idProduct.label', default: 'Id Product')}" />
-					
 						<g:sortableColumn property="number" title="${message(code: 'bill.number.label', default: 'Number')}" />
+					
+						<th><g:message code="bill.customer.label" default="Customer" /></th>
 					
 						<th><g:message code="bill.television.label" default="Television" /></th>
 					
@@ -38,11 +36,9 @@
 				<g:each in="${billInstanceList}" status="i" var="billInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${billInstance.id}">${fieldValue(bean: billInstance, field: "idCustomer")}</g:link></td>
+						<td><g:link action="show" id="${billInstance.id}">${fieldValue(bean: billInstance, field: "number")}</g:link></td>
 					
-						<td>${fieldValue(bean: billInstance, field: "idProduct")}</td>
-					
-						<td>${fieldValue(bean: billInstance, field: "number")}</td>
+						<td>${fieldValue(bean: billInstance, field: "customer")}</td>
 					
 						<td>${fieldValue(bean: billInstance, field: "television")}</td>
 					

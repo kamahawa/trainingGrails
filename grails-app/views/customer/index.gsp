@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="layout_main">
+		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'customer.label', default: 'Customer')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
@@ -32,8 +32,6 @@
 					
 						<th><g:message code="customer.accountBank.label" default="Account Bank" /></th>
 					
-						<th><g:message code="customer.bill.label" default="Bill" /></th>
-					
 						<g:sortableColumn property="birthday" title="${message(code: 'customer.birthday.label', default: 'Birthday')}" />
 					
 					</tr>
@@ -49,8 +47,6 @@
 						<td>${fieldValue(bean: customerInstance, field: "name")}</td>
 					
 						<td>${fieldValue(bean: customerInstance, field: "accountBank")}</td>
-					
-						<td>${fieldValue(bean: customerInstance, field: "bill")}</td>
 					
 						<td><g:formatDate date="${customerInstance.birthday}" /></td>
 					

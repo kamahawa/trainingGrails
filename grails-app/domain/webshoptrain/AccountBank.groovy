@@ -11,4 +11,9 @@ class AccountBank {
 
     //one to one
     static hasOne = [customer:Customer]
+
+    static mapping = {
+        table "AccountBank"
+        customer joinTable: [name:"customer_accountBank", key:"accountBank_id"]
+    }
 }

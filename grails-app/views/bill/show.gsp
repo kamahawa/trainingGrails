@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="layout_main">
+		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'bill.label', default: 'Bill')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
@@ -23,29 +23,42 @@
 			</g:if>
 			<ol class="property-list bill">
 			
-				<g:if test="${billInstance?.idCustomer}">
-				<li class="fieldcontain">
-					<span id="idCustomer-label" class="property-label"><g:message code="bill.idCustomer.label" default="Id Customer" /></span>
-					
-						<span class="property-value" aria-labelledby="idCustomer-label"><g:fieldValue bean="${billInstance}" field="idCustomer"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${billInstance?.idProduct}">
-				<li class="fieldcontain">
-					<span id="idProduct-label" class="property-label"><g:message code="bill.idProduct.label" default="Id Product" /></span>
-					
-						<span class="property-value" aria-labelledby="idProduct-label"><g:fieldValue bean="${billInstance}" field="idProduct"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${billInstance?.number}">
 				<li class="fieldcontain">
 					<span id="number-label" class="property-label"><g:message code="bill.number.label" default="Number" /></span>
 					
 						<span class="property-value" aria-labelledby="number-label"><g:fieldValue bean="${billInstance}" field="number"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${billInstance?.billTelevision}">
+				<li class="fieldcontain">
+					<span id="billTelevision-label" class="property-label"><g:message code="bill.billTelevision.label" default="Bill Television" /></span>
+					
+						<g:each in="${billInstance.billTelevision}" var="b">
+						<span class="property-value" aria-labelledby="billTelevision-label"><g:link controller="television" action="show" id="${b.id}">${b?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${billInstance?.customer}">
+				<li class="fieldcontain">
+					<span id="customer-label" class="property-label"><g:message code="bill.customer.label" default="Customer" /></span>
+					
+						<span class="property-value" aria-labelledby="customer-label"><g:link controller="customer" action="show" id="${billInstance?.customer?.id}">${billInstance?.customer?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${billInstance?.customerBill}">
+				<li class="fieldcontain">
+					<span id="customerBill-label" class="property-label"><g:message code="bill.customerBill.label" default="Customer Bill" /></span>
+					
+						<g:each in="${billInstance.customerBill}" var="c">
+						<span class="property-value" aria-labelledby="customerBill-label"><g:link controller="customer" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
+						</g:each>
 					
 				</li>
 				</g:if>

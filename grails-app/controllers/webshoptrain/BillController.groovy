@@ -1,6 +1,7 @@
 package webshoptrain
 
 
+
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -11,7 +12,7 @@ class BillController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond Bill.list(params), model: [billInstanceCount: Bill.count()]
+        respond Bill.list(params), model:[billInstanceCount: Bill.count()]
     }
 
     def show(Bill billInstance) {
@@ -30,11 +31,11 @@ class BillController {
         }
 
         if (billInstance.hasErrors()) {
-            respond billInstance.errors, view: 'create'
+            respond billInstance.errors, view:'create'
             return
         }
 
-        billInstance.save flush: true
+        billInstance.save flush:true
 
         request.withFormat {
             form multipartForm {
@@ -57,18 +58,18 @@ class BillController {
         }
 
         if (billInstance.hasErrors()) {
-            respond billInstance.errors, view: 'edit'
+            respond billInstance.errors, view:'edit'
             return
         }
 
-        billInstance.save flush: true
+        billInstance.save flush:true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'Bill.label', default: 'Bill'), billInstance.id])
                 redirect billInstance
             }
-            '*' { respond billInstance, [status: OK] }
+            '*'{ respond billInstance, [status: OK] }
         }
     }
 
@@ -80,14 +81,14 @@ class BillController {
             return
         }
 
-        billInstance.delete flush: true
+        billInstance.delete flush:true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'Bill.label', default: 'Bill'), billInstance.id])
-                redirect action: "index", method: "GET"
+                redirect action:"index", method:"GET"
             }
-            '*' { render status: NO_CONTENT }
+            '*'{ render status: NO_CONTENT }
         }
     }
 
@@ -97,7 +98,7 @@ class BillController {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: 'bill.label', default: 'Bill'), params.id])
                 redirect action: "index", method: "GET"
             }
-            '*' { render status: NOT_FOUND }
+            '*'{ render status: NOT_FOUND }
         }
     }
 }

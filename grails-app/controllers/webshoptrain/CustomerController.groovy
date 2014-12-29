@@ -1,7 +1,6 @@
 package webshoptrain
 
 
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -12,7 +11,7 @@ class CustomerController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond Customer.list(params), model:[customerInstanceCount: Customer.count()]
+        respond Customer.list(params), model: [customerInstanceCount: Customer.count()]
     }
 
     def show(Customer customerInstance) {
@@ -31,11 +30,11 @@ class CustomerController {
         }
 
         if (customerInstance.hasErrors()) {
-            respond customerInstance.errors, view:'create'
+            respond customerInstance.errors, view: 'create'
             return
         }
 
-        customerInstance.save flush:true
+        customerInstance.save flush: true
 
         request.withFormat {
             form multipartForm {
@@ -58,18 +57,18 @@ class CustomerController {
         }
 
         if (customerInstance.hasErrors()) {
-            respond customerInstance.errors, view:'edit'
+            respond customerInstance.errors, view: 'edit'
             return
         }
 
-        customerInstance.save flush:true
+        customerInstance.save flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'Customer.label', default: 'Customer'), customerInstance.id])
                 redirect customerInstance
             }
-            '*'{ respond customerInstance, [status: OK] }
+            '*' { respond customerInstance, [status: OK] }
         }
     }
 
@@ -81,14 +80,14 @@ class CustomerController {
             return
         }
 
-        customerInstance.delete flush:true
+        customerInstance.delete flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'Customer.label', default: 'Customer'), customerInstance.id])
-                redirect action:"index", method:"GET"
+                redirect action: "index", method: "GET"
             }
-            '*'{ render status: NO_CONTENT }
+            '*' { render status: NO_CONTENT }
         }
     }
 
@@ -98,7 +97,7 @@ class CustomerController {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: 'customer.label', default: 'Customer'), params.id])
                 redirect action: "index", method: "GET"
             }
-            '*'{ render status: NOT_FOUND }
+            '*' { render status: NOT_FOUND }
         }
     }
 }
