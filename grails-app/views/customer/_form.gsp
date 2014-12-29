@@ -38,6 +38,24 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: customerInstance, field: 'bills', 'error')} ">
+	<label for="bills">
+		<g:message code="customer.bills.label" default="Bills" />
+		
+	</label>
+	
+<ul class="one-to-many">
+<g:each in="${customerInstance?.bills?}" var="b">
+    <li><g:link controller="bill" action="show" id="${b.id}">${b?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="bill" action="create" params="['customer.id': customerInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'bill.label', default: 'Bill')])}</g:link>
+</li>
+</ul>
+
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: customerInstance, field: 'birthday', 'error')} required">
 	<label for="birthday">
 		<g:message code="customer.birthday.label" default="Birthday" />

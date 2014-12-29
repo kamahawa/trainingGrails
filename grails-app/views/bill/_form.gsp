@@ -11,32 +11,23 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: billInstance, field: 'billTelevision', 'error')} ">
-	<label for="billTelevision">
-		<g:message code="bill.billTelevision.label" default="Bill Television" />
-		
-	</label>
-	
-
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: billInstance, field: 'customer', 'error')} required">
 	<label for="customer">
 		<g:message code="bill.customer.label" default="Customer" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="customer" name="customer.id" from="${webshoptrain.Customer.list()}" optionKey="id" required="" value="${billInstance?.customer?.id}" class="many-to-one"/>
+	<g:select id="customer" name="customer.id" from="${webshoptrain.Customer.list()}" optionKey="id" required="" value="${billInstance?.customer?.Name}" class="many-to-one"/>
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: billInstance, field: 'customerBill', 'error')} ">
-	<label for="customerBill">
-		<g:message code="bill.customerBill.label" default="Customer Bill" />
-		
-	</label>
-	<g:select name="customerBill" from="${webshoptrain.Customer.list()}" multiple="multiple" optionKey="id" size="5" value="${billInstance?.customerBill*.id}" class="many-to-many"/>
+%{--<div class="fieldcontain ${hasErrors(bean: billInstance, field: 'customerBill', 'error')} ">--}%
+	%{--<label for="customerBill">--}%
+		%{--<g:message code="bill.customerBill.label" default="Customer Bill" />--}%
+		%{----}%
+	%{--</label>--}%
+	%{--<g:select name="customerBill" from="${webshoptrain.Customer.list()}" multiple="multiple" optionKey="id" size="5" value="${billInstance?.customerBill*.id}" class="many-to-many"/>--}%
 
-</div>
+%{--</div>--}%
 
 <div class="fieldcontain ${hasErrors(bean: billInstance, field: 'television', 'error')} required">
 	<label for="television">

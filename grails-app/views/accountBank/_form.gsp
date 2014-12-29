@@ -20,12 +20,3 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: accountBankInstance, field: 'customer', 'error')} required">
-	<label for="customer">
-		<g:message code="accountBank.customer.label" default="Customer" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="customer" name="customer.id" from="${webshoptrain.Customer.list()}" optionKey="id" required="" value="${accountBankInstance?.customer?.id}" class="many-to-one"/>
-
-</div>
-

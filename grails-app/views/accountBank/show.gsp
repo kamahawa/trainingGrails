@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="layout_main">
 		<g:set var="entityName" value="${message(code: 'accountBank.label', default: 'AccountBank')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
@@ -37,15 +37,6 @@
 					<span id="numberAccount-label" class="property-label"><g:message code="accountBank.numberAccount.label" default="Number Account" /></span>
 					
 						<span class="property-value" aria-labelledby="numberAccount-label"><g:fieldValue bean="${accountBankInstance}" field="numberAccount"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${accountBankInstance?.customer}">
-				<li class="fieldcontain">
-					<span id="customer-label" class="property-label"><g:message code="accountBank.customer.label" default="Customer" /></span>
-					
-						<span class="property-value" aria-labelledby="customer-label"><g:link controller="customer" action="show" id="${accountBankInstance?.customer?.id}">${accountBankInstance?.customer?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

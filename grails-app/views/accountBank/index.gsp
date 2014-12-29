@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="layout_main">
 		<g:set var="entityName" value="${message(code: 'accountBank.label', default: 'AccountBank')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
@@ -28,8 +28,6 @@
 					
 						<g:sortableColumn property="numberAccount" title="${message(code: 'accountBank.numberAccount.label', default: 'Number Account')}" />
 					
-						<th><g:message code="accountBank.customer.label" default="Customer" /></th>
-					
 					</tr>
 				</thead>
 				<tbody>
@@ -39,8 +37,6 @@
 						<td><g:link action="show" id="${accountBankInstance.id}">${fieldValue(bean: accountBankInstance, field: "bankName")}</g:link></td>
 					
 						<td>${fieldValue(bean: accountBankInstance, field: "numberAccount")}</td>
-					
-						<td>${fieldValue(bean: accountBankInstance, field: "customer")}</td>
 					
 					</tr>
 				</g:each>

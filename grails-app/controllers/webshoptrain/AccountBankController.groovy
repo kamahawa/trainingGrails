@@ -1,6 +1,7 @@
 package webshoptrain
 
 
+
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -11,7 +12,7 @@ class AccountBankController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond AccountBank.list(params), model: [accountBankInstanceCount: AccountBank.count()]
+        respond AccountBank.list(params), model:[accountBankInstanceCount: AccountBank.count()]
     }
 
     def show(AccountBank accountBankInstance) {
@@ -30,11 +31,11 @@ class AccountBankController {
         }
 
         if (accountBankInstance.hasErrors()) {
-            respond accountBankInstance.errors, view: 'create'
+            respond accountBankInstance.errors, view:'create'
             return
         }
 
-        accountBankInstance.save flush: true
+        accountBankInstance.save flush:true
 
         request.withFormat {
             form multipartForm {
@@ -57,18 +58,18 @@ class AccountBankController {
         }
 
         if (accountBankInstance.hasErrors()) {
-            respond accountBankInstance.errors, view: 'edit'
+            respond accountBankInstance.errors, view:'edit'
             return
         }
 
-        accountBankInstance.save flush: true
+        accountBankInstance.save flush:true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'AccountBank.label', default: 'AccountBank'), accountBankInstance.id])
                 redirect accountBankInstance
             }
-            '*' { respond accountBankInstance, [status: OK] }
+            '*'{ respond accountBankInstance, [status: OK] }
         }
     }
 
@@ -80,14 +81,14 @@ class AccountBankController {
             return
         }
 
-        accountBankInstance.delete flush: true
+        accountBankInstance.delete flush:true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'AccountBank.label', default: 'AccountBank'), accountBankInstance.id])
-                redirect action: "index", method: "GET"
+                redirect action:"index", method:"GET"
             }
-            '*' { render status: NO_CONTENT }
+            '*'{ render status: NO_CONTENT }
         }
     }
 
@@ -97,7 +98,7 @@ class AccountBankController {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: 'accountBank.label', default: 'AccountBank'), params.id])
                 redirect action: "index", method: "GET"
             }
-            '*' { render status: NOT_FOUND }
+            '*'{ render status: NOT_FOUND }
         }
     }
 }
